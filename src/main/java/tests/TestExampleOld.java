@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class TestExample {
+public class TestExampleOld {
     public AndroidDriver<MobileElement> driver;
     public WebDriverWait wait;
     //Privacy Splash Elements
