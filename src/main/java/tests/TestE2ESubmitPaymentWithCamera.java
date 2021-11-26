@@ -10,6 +10,8 @@ import validations.PayPageValidation;
 
 public class TestE2ESubmitPaymentWithCamera extends TestBase {
 
+    // TODO: Experiment with passing reference / object from one page to the next
+
     @Test(description = "Execute an E2E test with a utility bill, including payment setup and submission")
     public void testSendingUtilityBill() {
         // Pages

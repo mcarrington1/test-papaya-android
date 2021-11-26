@@ -12,11 +12,6 @@ import java.time.Duration;
 
 
 public class AddBankAccountPage extends BasePage {
-
-//    private AppiumDriver driver;
-
-    public AddBankAccountPage() {}
-
     public AddBankAccountPage(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this);

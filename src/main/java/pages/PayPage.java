@@ -10,11 +10,6 @@ import java.time.Duration;
 
 
 public class PayPage extends BasePage {
-
-    private AppiumDriver driver;
-
-    public PayPage() {}
-
     public PayPage(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this);

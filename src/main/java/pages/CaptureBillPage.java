@@ -10,11 +10,6 @@ import java.time.Duration;
 
 
 public class CaptureBillPage extends BasePage {
-
-    private AppiumDriver driver;
-
-    public CaptureBillPage() {}
-
     public CaptureBillPage(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this);

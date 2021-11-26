@@ -14,7 +14,7 @@ public class TestBase {
     public AndroidDriver<MobileElement> driver;
 
     @BeforeSuite
-    public void setup() throws MalformedURLException {
+    public void setupDriver() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName", "test2");
         caps.setCapability("udid", "emulator-5554"); //DeviceId from "adb devices" command

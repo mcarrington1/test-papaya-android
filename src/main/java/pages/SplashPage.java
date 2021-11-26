@@ -10,11 +10,6 @@ import java.time.Duration;
 
 
 public class SplashPage extends BasePage {
-
-    private AppiumDriver driver;
-
-    public SplashPage() {}
-
     public SplashPage(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this);
@@ -27,5 +22,4 @@ public class SplashPage extends BasePage {
         payBillButton.click();
         return this;
     }
-
 }

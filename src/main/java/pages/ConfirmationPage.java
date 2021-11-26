@@ -10,11 +10,6 @@ import java.time.Duration;
 
 
 public class ConfirmationPage extends BasePage {
-
-    private AppiumDriver driver;
-
-    public ConfirmationPage() {}
-
     public ConfirmationPage(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this);

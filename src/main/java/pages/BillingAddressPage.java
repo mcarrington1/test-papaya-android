@@ -14,10 +14,6 @@ import java.time.Duration;
 
 public class BillingAddressPage extends BasePage {
 
-    private AppiumDriver driver;
-
-    public BillingAddressPage() {}
-
     public BillingAddressPage(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this);
