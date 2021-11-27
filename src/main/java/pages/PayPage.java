@@ -21,6 +21,19 @@ public class PayPage extends BasePage {
     @AndroidFindBy(id = "com.snappays:id/payment_method_txt_payment")
     private MobileElement paymentMethodInfo;
 
+    // Note: The following elements only appear for medical bills
+    @AndroidFindBy(accessibility = "Patient Name")
+    private MobileElement patientNameInput;
+
+    @AndroidFindBy(accessibility = "Patient Date of Birth")
+    private MobileElement patientDobInput;
+
+    public PayPage setMedicalInformation(String name, String dob) {
+        patientNameInput.sendKeys(name);
+        patientDobInput.sendKeys(dob);
+        return this;
+    }
+
     public ConfirmationPage submitPayment() {
         payBillSubmitButton.click();
         return new ConfirmationPage(driver);

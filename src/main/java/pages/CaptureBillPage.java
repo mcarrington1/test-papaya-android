@@ -44,9 +44,6 @@ public class CaptureBillPage extends BasePage {
     @AndroidFindBy(id = "com.snappays:id/btn_bank_account_manual")
     private MobileElement addBankAccountManualEntryButton;
 
-
-
-
     public CaptureBillPage authorizeCameraAccess() {
         allowCameraAccessButton.click();
         approveCameraPermissionButton.click();
@@ -64,7 +61,6 @@ public class CaptureBillPage extends BasePage {
         return this;
     }
 
-    // TODO: Convert to ENUM and change to "add payment method"
     public AddBankAccountPage addBankAccount() {
         addBankAccountButton.click();
         addBankAccountManualEntryButton.click();

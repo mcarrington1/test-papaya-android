@@ -1,10 +1,12 @@
 package tests;
 
 
+import enums.BillType;
 import model.Address;
 import model.BankAccount;
 import org.testng.annotations.Test;
 import pages.*;
+import utils.AvdManagement;
 import validations.CaptureBillPageValidation;
 import validations.ConfirmationPageValidation;
 import validations.PayPageValidation;
@@ -17,6 +19,8 @@ public class TestE2ESubmitPaymentWithCamera extends TestBase {
 
     @Test(description = "Execute an E2E test with a utility bill, including payment setup and submission.")
     public void testSendingUtilityBill() {
+        AvdManagement.setTestImage(BillType.UTILITY);
+
         SplashPage splashPage = new SplashPage(driver);
 
         CaptureBillPage captureBillPage = splashPage.startPayBill();
@@ -48,5 +52,12 @@ public class TestE2ESubmitPaymentWithCamera extends TestBase {
         //TODO: These are commented out so we do not spam the server
 //        ConfirmationPage confirmationPage = payPage.submitPayment();
 //        ConfirmationPageValidation.validateConfirmationPageSuccess(confirmationPage);
+    }
+
+    @Test
+    public void testSendingMedicalBill() {
+        AvdManagement.setTestImage(BillType.MEDICAL);
+
+
     }
 }
