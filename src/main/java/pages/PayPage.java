@@ -22,6 +22,9 @@ public class PayPage extends BasePage {
     private MobileElement paymentMethodInfo;
 
     // Note: The following elements only appear for medical bills
+    @AndroidFindBy(id = "com.snappays:id/txt_next")
+    private MobileElement nextButton;
+
     @AndroidFindBy(accessibility = "Patient Name")
     private MobileElement patientNameInput;
 
@@ -31,6 +34,11 @@ public class PayPage extends BasePage {
     public PayPage setMedicalInformation(String name, String dob) {
         patientNameInput.sendKeys(name);
         patientDobInput.sendKeys(dob);
+        return this;
+    }
+
+    public PayPage submitForMedicalInfo() {
+        nextButton.click();
         return this;
     }
 
