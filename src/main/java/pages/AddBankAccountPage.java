@@ -56,8 +56,8 @@ public class AddBankAccountPage extends BasePage {
         return this;
     }
 
-    public AddBankAccountPage submitBankAccount() {
+    public BillingAddressPage submitBankAccount() {
         bankAccountNextButton.click();
-        return this;
+        return new BillingAddressPage(driver);
     }
 }

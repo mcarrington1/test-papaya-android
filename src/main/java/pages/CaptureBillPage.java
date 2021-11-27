@@ -65,10 +65,10 @@ public class CaptureBillPage extends BasePage {
     }
 
     // TODO: Convert to ENUM and change to "add payment method"
-    public CaptureBillPage addBankAccount() {
+    public AddBankAccountPage addBankAccount() {
         addBankAccountButton.click();
         addBankAccountManualEntryButton.click();
-        return this;
+        return new AddBankAccountPage(driver);
     }
 
     public String getPayAmountDisplayed() {

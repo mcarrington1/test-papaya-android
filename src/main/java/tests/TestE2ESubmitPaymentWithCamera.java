@@ -6,31 +6,22 @@ import model.BankAccount;
 import org.testng.annotations.Test;
 import pages.*;
 import validations.CaptureBillPageValidation;
+import validations.ConfirmationPageValidation;
 import validations.PayPageValidation;
 
 public class TestE2ESubmitPaymentWithCamera extends TestBase {
+    private final String expectedBillAmount = "5.00";
+    private final String expectedBillerName = "City Of Tallahassee";
+    private final BankAccount bankAccount = new BankAccount();
+    private final Address address = new Address();
 
-    // TODO: Experiment with passing reference / object from one page to the next
-
-    @Test(description = "Execute an E2E test with a utility bill, including payment setup and submission")
+    @Test(description = "Execute an E2E test with a utility bill, including payment setup and submission.")
     public void testSendingUtilityBill() {
-        // Pages
         SplashPage splashPage = new SplashPage(driver);
-        CaptureBillPage captureBillPage = new CaptureBillPage(driver);
-        AddBankAccountPage addBankAccountPage = new AddBankAccountPage(driver);
-        BillingAddressPage billingAddressPage = new BillingAddressPage(driver);
-        PayPage payPage = new PayPage(driver);
-        ConfirmationPage confirmationPage = new ConfirmationPage(driver);
 
-        // Models
-        BankAccount bankAccount = new BankAccount();
-        Address address = new Address();
+        CaptureBillPage captureBillPage = splashPage.startPayBill();
 
-        // Test Data
-        String expectedBillAmount = "5.00";
-        String expectedBillerName = "City Of Tallahassee";
-
-        splashPage.startPayBill();
+        // Capture Bill Image & set amount
         captureBillPage
                 .authorizeCameraAccess()
                 .captureBillFromCamera()
@@ -39,20 +30,23 @@ public class TestE2ESubmitPaymentWithCamera extends TestBase {
         CaptureBillPageValidation.validateBillAmount(captureBillPage, "$" + expectedBillAmount);
         CaptureBillPageValidation.validateBillerName(captureBillPage, expectedBillerName);
 
-        captureBillPage.addBankAccount();
+        AddBankAccountPage addBankAccountPage = captureBillPage.addBankAccount();
 
-        addBankAccountPage
+        // Add Bank Account with Address
+        BillingAddressPage billingAddressPage = addBankAccountPage
                 .enterBankAccountDetails(bankAccount)
                 .submitBankAccount();
 
-        billingAddressPage
+        PayPage payPage = billingAddressPage
                 .setAddress(address)
                 .acceptTos()
-                .saveBankAccount();
+                .saveBankAccountAndSubmit();
 
         PayPageValidation.validatePartialAccountNumber(payPage, bankAccount.getAccountNumber());
+
+        // Submit Payment
         //TODO: These are commented out so we do not spam the server
-//        payPage.submitPayment();
+//        ConfirmationPage confirmationPage = payPage.submitPayment();
 //        ConfirmationPageValidation.validateConfirmationPageSuccess(confirmationPage);
     }
 }

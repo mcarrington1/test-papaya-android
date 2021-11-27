@@ -21,13 +21,12 @@ public class PayPage extends BasePage {
     @AndroidFindBy(id = "com.snappays:id/payment_method_txt_payment")
     private MobileElement paymentMethodInfo;
 
-    public PayPage submitPayment() {
+    public ConfirmationPage submitPayment() {
         payBillSubmitButton.click();
-        return this;
+        return new ConfirmationPage(driver);
     }
 
     public String getPaymentInfo() {
         return paymentMethodInfo.getText();
     }
-
 }

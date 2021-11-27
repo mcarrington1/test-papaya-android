@@ -63,9 +63,8 @@ public class BillingAddressPage extends BasePage {
         return this;
     }
 
-    public BillingAddressPage saveBankAccount() {
-        // TODO: Check if button is enabled
+    public PayPage saveBankAccountAndSubmit() {
         saveBankAccountButton.click();
-        return this;
+        return new PayPage(driver);
     }
 }
