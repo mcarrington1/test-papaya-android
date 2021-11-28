@@ -14,5 +14,9 @@ There is only one suite which is compromised of 1 data-driven test that uses 2 d
 
 ## Run Instructions
 1. Clone down this repo
-2. Execute the tests, there are different ways to run them
-   1. 
+2. You can run these tests in a bunch of different ways.
+   1. Via IDE (e.g. Intellij)
+      1. Add your deviceName and UDID for your device into E2E.xml under "suites"
+      2. Right click to run the suite
+   2. Via Maven
+   3. Via Jar 

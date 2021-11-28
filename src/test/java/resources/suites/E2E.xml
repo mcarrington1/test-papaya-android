@@ -1,6 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="E2E Suite" verbose="1" >
+<!--    Don't forget to set these options for your AVD -->
+    <parameter name="deviceName" value="" />
+    <parameter name="udid" value="" />
+    <parameter name="platformName" value="Android"/>
+    <parameter name="platformVersion" value="10"/>
+
     <test name="Submit Payment With Camera">
         <classes>
             <class name="E2E.TestE2ESubmitPaymentWithCamera"/>
