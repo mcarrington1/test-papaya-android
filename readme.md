@@ -19,4 +19,6 @@ There is only one suite which is compromised of 1 data-driven test that uses 2 d
       1. Add your deviceName and UDID for your device into E2E.xml under "suites"
       2. Right click to run the suite
    2. Via Maven
+      1. Run `mvn test -DdeviceName=<your device here> -Dudid=<your udid here> -DplatformVersion=<your version here>`
+         NOTE: Make sure to replace the parameters with your actual info
    3. Via Jar 
