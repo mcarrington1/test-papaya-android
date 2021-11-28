@@ -20,7 +20,10 @@ public class CaptureBillPage extends BasePage {
     private MobileElement allowCameraAccessButton;
 
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_button")
-    private MobileElement approveCameraPermissionButton;
+    private MobileElement approveCameraPermissionButtonAndroid10;
+
+    @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button")
+    private MobileElement approveCameraPermissionButtonAndroid11;
 
     @AndroidFindBy(id = "com.snappays:id/capture_button")
     private MobileElement shutterButton;
@@ -44,33 +47,67 @@ public class CaptureBillPage extends BasePage {
     @AndroidFindBy(id = "com.snappays:id/btn_bank_account_manual")
     private MobileElement addBankAccountManualEntryButton;
 
+    /**
+     * Authorize camera access including camera access and permission button
+     * NOTE: May need more investigation with Android 9 and Android 12
+     * @return
+     */
     public CaptureBillPage authorizeCameraAccess() {
         allowCameraAccessButton.click();
-        approveCameraPermissionButton.click();
+
+        // The permission process is different on Android 11+
+        if (driver.getCapabilities().getCapability("platformVersion") == "11") {
+            approveCameraPermissionButtonAndroid11.click();
+        } else {
+            approveCameraPermissionButtonAndroid10.click();
+        }
+
         return this;
     }
 
+    /**
+     * Interact with shutter button on camera
+     * @return
+     */
     public CaptureBillPage captureBillFromCamera() {
         shutterButton.click();
         return this;
     }
 
+    /**
+     * Set the bill amount after capturing the bill image
+     * @param billAmount
+     * @return
+     */
     public CaptureBillPage setBillAmount(String billAmount) {
         addBillAmountInput.sendKeys(billAmount);
         addBillAmountContinueButton.click();
         return this;
     }
 
+    /**
+     * Add a bank account and manually enter bank info
+     * @return
+     */
     public AddBankAccountPage addBankAccount() {
         addBankAccountButton.click();
         addBankAccountManualEntryButton.click();
         return new AddBankAccountPage(driver);
     }
 
+    /**
+     * Get quoted payment amount
+     * @return String of payment amount quoted, does not include the $ symbol
+     */
     public String getPayAmountDisplayed() {
         return quotedPayAmount.getText();
     }
 
+    /**
+     * Get quoted biller name
+     * @return String of biller name,
+     * may not appear as the expected biller for medical bills and display generic text
+     */
     public String getBillerNameDisplayed() {
         return quotedBillerName.getText();
     }

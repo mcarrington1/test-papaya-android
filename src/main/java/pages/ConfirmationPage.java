@@ -21,12 +21,11 @@ public class ConfirmationPage extends BasePage {
     @AndroidFindBy(id = "com.snappays:id/btn_continue")
     private MobileElement continueButton;
 
+    /**
+     * Return boolean if Payment image is displayed; this is what is used to confirm successful payment
+     * @return
+     */
     public Boolean isSuccessfulPaymentImageDisplayed() {
         return paymentSuccessImage.isDisplayed();
-    }
-
-    public ConfirmationPage continueFromPage() {
-        continueButton.click();
-        return this;
     }
 }

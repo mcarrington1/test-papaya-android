@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import pages.*;
 import utils.AvdManagement;
 import validations.CaptureBillPageValidation;
-import validations.ConfirmationPageValidation;
 import validations.PayPageValidation;
 
 import static enums.BillType.MEDICAL;
@@ -60,7 +59,7 @@ public class TestE2ESubmitPaymentWithCamera extends TestBase {
         BillingAddressPage billingAddressPage = new BillingAddressPage(driver);
         billingAddressPage
                 .setAddress(address)
-                .acceptTos()
+                .setTOSCheckbox(true)
                 .saveBankAccountAndSubmit();
 
         // Validate our payment and submit

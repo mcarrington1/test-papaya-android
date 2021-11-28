@@ -48,7 +48,10 @@ public class BillingAddressPage extends BasePage {
         return this;
     }
 
-    // TODO: This presently does not scroll the view and only finds the first ~12 states
+    /**
+     * Tap on the state drop down; does *NOT* presently scroll down, so only select the first ~12 states in view
+     * @param address Address object, extracts out the state (e.g. AK, MO, FL, etc.)
+     */
     private void setAddressStateDropDown(Address address) {
         addressStateDropDown.click();
 
@@ -58,11 +61,37 @@ public class BillingAddressPage extends BasePage {
         stateElement.click();
     }
 
-    public BillingAddressPage acceptTos() {
-        tosCheckBox.click();
+    /**
+     * Set terms of service checkbox as enabled or disabled to support positive and negative tests
+     * Checks the present state of the checkbox as well
+     * @param shouldBeChecked true = check the box, false = do not check the box.
+     * @return
+     */
+    public BillingAddressPage setTOSCheckbox(boolean shouldBeChecked) {
+        if (shouldBeChecked) {
+            enableTOSCheckBox();
+        } else {
+            disableTOSCheckBox();
+        }
         return this;
     }
 
+    private void enableTOSCheckBox() {
+        if (!tosCheckBox.getAttribute("checked").contains("true")) {
+            tosCheckBox.click();
+        }
+    }
+
+    private void disableTOSCheckBox() {
+        if (tosCheckBox.getAttribute("checked").contains("true")) {
+            tosCheckBox.click();
+        }
+    }
+
+    /**
+     * Saves the bank account
+     * @return
+     */
     public PayPage saveBankAccountAndSubmit() {
         saveBankAccountButton.click();
         return new PayPage(driver);

@@ -18,6 +18,10 @@ public class SplashPage extends BasePage {
     @AndroidFindBy(id = "com.snappays:id/big_button")
     private MobileElement payBillButton;
 
+    /**
+     * Start bill pay process from splash page
+     * @return
+     */
     public CaptureBillPage startPayBill() {
         payBillButton.click();
         return new CaptureBillPage(driver);

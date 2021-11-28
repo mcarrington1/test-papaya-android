@@ -44,6 +44,11 @@ public class AddBankAccountPage extends BasePage {
     @AndroidFindBy(id = "com.snappays:id/btn_save_bank_account")
     private MobileElement bankAccountNextButton;
 
+    /**
+     * Enter all bank account info for this view.
+     * @param bankAccount The default BankAccount object has all fields we need
+     * @return
+     */
     public AddBankAccountPage enterBankAccountDetails(BankAccount bankAccount) {
         customerPhoneInput.sendKeys(bankAccount.getPhoneNumber());
         customerEmailInput.sendKeys(bankAccount.getEmailAddress());
@@ -56,6 +61,10 @@ public class AddBankAccountPage extends BasePage {
         return this;
     }
 
+    /**
+     * Submit bank account, this transitions user to the BillingAddress POM
+     * @return
+     */
     public BillingAddressPage submitBankAccount() {
         bankAccountNextButton.click();
         return new BillingAddressPage(driver);
