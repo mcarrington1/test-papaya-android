@@ -7,6 +7,10 @@
     <parameter name="platformName" value="Android"/>
     <parameter name="platformVersion" value="10"/>
 
+    <listeners>
+        <listener class-name="listeners.TestStatusListener" />
+    </listeners>
+
     <test name="Submit Payment With Camera">
         <classes>
             <class name="E2E.TestE2ESubmitPaymentWithCamera"/>

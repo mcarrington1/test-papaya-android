@@ -4,6 +4,8 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
@@ -14,6 +16,7 @@ public class PayPage extends BasePage {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this);
     }
+    private static final Logger logger = LogManager.getLogger(PayPage.class);
 
     @AndroidFindBy(id = "com.snappays:id/big_pay_button")
     private MobileElement payBillSubmitButton;
@@ -38,6 +41,7 @@ public class PayPage extends BasePage {
      * @return
      */
     public PayPage setMedicalInformation(String name, String dob) {
+        logger.info("Setting customer medical info as name:{}, dob:{}", name, dob);
         patientNameInput.sendKeys(name);
         patientDobInput.sendKeys(dob);
         return this;
@@ -48,6 +52,7 @@ public class PayPage extends BasePage {
      * @return
      */
     public PayPage submitForMedicalInfo() {
+        logger.info("Hitting next now that medical info is submitted");
         nextButton.click();
         return this;
     }
@@ -57,6 +62,7 @@ public class PayPage extends BasePage {
      * @return
      */
     public ConfirmationPage submitPayment() {
+        logger.info("Hitting final payment button");
         payBillSubmitButton.click();
         return new ConfirmationPage(driver);
     }

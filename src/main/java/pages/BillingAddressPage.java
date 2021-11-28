@@ -5,6 +5,8 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import model.Address;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -18,6 +20,7 @@ public class BillingAddressPage extends BasePage {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this);
     }
+    private static final Logger logger = LogManager.getLogger(BillingAddressPage.class);
 
     // Address Fields
     @AndroidFindBy(id = "com.snappays:id/edt_address")
@@ -40,6 +43,8 @@ public class BillingAddressPage extends BasePage {
     private MobileElement saveBankAccountButton;
 
     public BillingAddressPage setAddress(Address address) {
+        logger.info("Setting address for parameters: {}", address);
+
         addressStreetInput.sendKeys(address.getStreet());
         addressCityInput.sendKeys(address.getCity());
         addressZipInput.sendKeys(address.getZip());
@@ -53,6 +58,8 @@ public class BillingAddressPage extends BasePage {
      * @param address Address object, extracts out the state (e.g. AK, MO, FL, etc.)
      */
     private void setAddressStateDropDown(Address address) {
+        logger.info("Setting address state drop down as: {}", address.getState());
+
         addressStateDropDown.click();
 
         MobileElement stateElement = (MobileElement) driver
@@ -68,6 +75,8 @@ public class BillingAddressPage extends BasePage {
      * @return
      */
     public BillingAddressPage setTOSCheckbox(boolean shouldBeChecked) {
+        logger.info("Setting TOS check as: {}", shouldBeChecked);
+
         if (shouldBeChecked) {
             enableTOSCheckBox();
         } else {
@@ -78,12 +87,14 @@ public class BillingAddressPage extends BasePage {
 
     private void enableTOSCheckBox() {
         if (!tosCheckBox.getAttribute("checked").contains("true")) {
+            logger.info("TOS Checkbox is unchecked, flipping to checked");
             tosCheckBox.click();
         }
     }
 
     private void disableTOSCheckBox() {
         if (tosCheckBox.getAttribute("checked").contains("true")) {
+            logger.info("TOS Checkbox is checked, flipping to unchecked");
             tosCheckBox.click();
         }
     }
@@ -93,6 +104,7 @@ public class BillingAddressPage extends BasePage {
      * @return
      */
     public PayPage saveBankAccountAndSubmit() {
+        logger.info("Saving bank account and proceeding to Pay page");
         saveBankAccountButton.click();
         return new PayPage(driver);
     }

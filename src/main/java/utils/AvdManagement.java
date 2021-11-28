@@ -1,6 +1,8 @@
 package utils;
 
 import enums.BillType;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,6 +11,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 public class AvdManagement {
+
+    private static final Logger logger = LogManager.getLogger(AvdManagement.class);
 
     /**
      * Set AVD camera template and image source based on BillType, driven by /avd/*.png filenames
@@ -23,6 +27,7 @@ public class AvdManagement {
      * Set Toren1BD.posters camera template for AVD, this WILL fail if ANDROID_HOME env is not set.
      */
     private static void setAvdCameraImageTemplate() {
+        logger.info("Setting AVD Template");
         Path posterFile = Paths.get("src/main/resources/avd/Toren1BD.posters");
         Path destination = Paths.get(System.getenv("ANDROID_HOME")
                 + "/emulator/resources/Toren1BD.posters");
@@ -47,6 +52,7 @@ public class AvdManagement {
                 break;
         }
 
+        logger.info("Setting test image for bill {} scenario", billType);
         Path source = Paths.get("src/main/resources/avd/" + testImageName);
         Path destination = Paths.get(System.getenv("ANDROID_HOME")
                 + "/emulator/resources/bill.png");
@@ -62,7 +68,7 @@ public class AvdManagement {
         try {
             Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
-            System.out.println(e);
+            logger.error(e);
         }
     }
 }

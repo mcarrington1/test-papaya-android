@@ -1,5 +1,12 @@
 # Papaya Pay - Android Automation POC
-This is a POC example of how we can use Appium to test a native Android App.
+This is a POC example of how we can use Appium to test a native Android App with a single base scenario
+
+## Features
+Although we are only supporting 2 related tests, the current code supports the following:
+1. Pre-setup to deal with the AVD camera. There are provider specific implementations (e.g. saucelabs, etc) that handle this differently, this would likely reliably work on ci/cd but may require a little tweaking
+2. semi-customized so it would be relatively easy to support IOS locators and platform, if needed
+3. logging and listeners to output status of tests
+4. page object model pattern with separate validation classes where appropriate
 
 ## Suites
 There is only one suite which is compromised of 1 data-driven test that uses 2 different sets of inputs.

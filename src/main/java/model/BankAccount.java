@@ -72,6 +72,16 @@ public class BankAccount {
         this.accountNumberConfirmation = accountNumberConfirmation;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "phoneNumber='" + phoneNumber + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", accountHolderName='" + accountHolderName + '\'' +
+                ", routingNumber='" + routingNumber + '\'' +
+                ", routingNumberConfirmation='" + routingNumberConfirmation + '\'' +
+                ", accountNumber='" + accountNumber + '\'' +
+                ", accountNumberConfirmation='" + accountNumberConfirmation + '\'' +
+                '}';
+    }
 }

@@ -4,6 +4,8 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
@@ -14,6 +16,7 @@ public class CaptureBillPage extends BasePage {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this);
     }
+    private static final Logger logger = LogManager.getLogger(CaptureBillPage.class);
 
     // Camera Functionality
     @AndroidFindBy(id = "com.snappays:id/request_permission_button")
@@ -53,6 +56,7 @@ public class CaptureBillPage extends BasePage {
      * @return
      */
     public CaptureBillPage authorizeCameraAccess() {
+        logger.info("Authorizing camera");
         allowCameraAccessButton.click();
 
         // The permission process is different on Android 11+
@@ -70,6 +74,7 @@ public class CaptureBillPage extends BasePage {
      * @return
      */
     public CaptureBillPage captureBillFromCamera() {
+        logger.info("capturing bill with camera");
         shutterButton.click();
         return this;
     }
@@ -80,6 +85,7 @@ public class CaptureBillPage extends BasePage {
      * @return
      */
     public CaptureBillPage setBillAmount(String billAmount) {
+        logger.info("setting bill amount as {}", billAmount);
         addBillAmountInput.sendKeys(billAmount);
         addBillAmountContinueButton.click();
         return this;
@@ -90,6 +96,7 @@ public class CaptureBillPage extends BasePage {
      * @return
      */
     public AddBankAccountPage addBankAccount() {
+        logger.info("adding manual bank account");
         addBankAccountButton.click();
         addBankAccountManualEntryButton.click();
         return new AddBankAccountPage(driver);
@@ -99,9 +106,7 @@ public class CaptureBillPage extends BasePage {
      * Get quoted payment amount
      * @return String of payment amount quoted, does not include the $ symbol
      */
-    public String getPayAmountDisplayed() {
-        return quotedPayAmount.getText();
-    }
+    public String getPayAmountDisplayed() { return quotedPayAmount.getText(); }
 
     /**
      * Get quoted biller name

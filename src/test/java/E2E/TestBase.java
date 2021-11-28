@@ -6,7 +6,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 

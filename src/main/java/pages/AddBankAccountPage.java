@@ -6,7 +6,10 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import model.BankAccount;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
+import utils.AvdManagement;
 
 import java.time.Duration;
 
@@ -16,6 +19,7 @@ public class AddBankAccountPage extends BasePage {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this);
     }
+    private static final Logger logger = LogManager.getLogger(AddBankAccountPage.class);
 
     // Contact Fields
     @AndroidFindBy(id = "com.snappays:id/edt_phone")
@@ -50,6 +54,8 @@ public class AddBankAccountPage extends BasePage {
      * @return
      */
     public AddBankAccountPage enterBankAccountDetails(BankAccount bankAccount) {
+        logger.info("Setting bank account for parameters: {}", bankAccount);
+
         customerPhoneInput.sendKeys(bankAccount.getPhoneNumber());
         customerEmailInput.sendKeys(bankAccount.getEmailAddress());
         bankAccountHolderInput.sendKeys(bankAccount.getAccountHolderName());
@@ -66,6 +72,8 @@ public class AddBankAccountPage extends BasePage {
      * @return
      */
     public BillingAddressPage submitBankAccount() {
+        logger.info("Hitting next in bank account info");
+
         bankAccountNextButton.click();
         return new BillingAddressPage(driver);
     }

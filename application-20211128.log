@@ -1,0 +1,150 @@
+2021-11-28 13:27:57.317 [main] INFO  utils.AvdManagement - Setting AVD Template
+2021-11-28 13:27:57.332 [main] INFO  utils.AvdManagement - Setting test image for bill UTILITY scenario
+2021-11-28 13:28:46.786 [main] INFO  utils.AvdManagement - Setting AVD Template
+2021-11-28 13:28:46.791 [main] INFO  utils.AvdManagement - Setting test image for bill MEDICAL scenario
+2021-11-28 13:44:51.350 [main] INFO  utils.AvdManagement - Setting AVD Template
+2021-11-28 13:44:51.363 [main] INFO  utils.AvdManagement - Setting test image for bill UTILITY scenario
+2021-11-28 13:44:51.526 [main] INFO  pages.SplashPage - Starting payment process
+2021-11-28 13:44:52.372 [main] INFO  pages.CaptureBillPage - Authorizing camera
+2021-11-28 13:44:54.783 [main] INFO  pages.CaptureBillPage - capturing bill with camera
+2021-11-28 13:44:56.086 [main] INFO  pages.CaptureBillPage - setting bill amount as 5.00
+2021-11-28 13:45:01.621 [main] INFO  validations.CaptureBillPageValidation - Comparing billing amount, expected $5.00
+2021-11-28 13:45:06.019 [main] INFO  validations.CaptureBillPageValidation - Comparing biller name, expected City Of Tallahassee
+2021-11-28 13:45:06.087 [main] INFO  pages.CaptureBillPage - adding manual bank account
+2021-11-28 13:45:07.827 [main] INFO  pages.AddBankAccountPage - Setting bank account for parameters: BankAccount{phoneNumber='3148675309', emailAddress='qa@papayapay.com', accountHolderName='test customer', routingNumber='081000210', routingNumberConfirmation='081000210', accountNumber='12345978910', accountNumberConfirmation='12345978910'}
+2021-11-28 13:45:17.584 [main] INFO  pages.AddBankAccountPage - Hitting next in bank account info
+2021-11-28 13:45:18.193 [main] INFO  pages.BillingAddressPage - Setting address for parameters: Address{street='3901 Old Seward Hwy Suite 101', city='Anchorage', zip='99503', state='AK'}
+2021-11-28 13:45:23.070 [main] INFO  pages.BillingAddressPage - Setting address state drop down as: AK
+2021-11-28 13:45:26.136 [main] INFO  pages.BillingAddressPage - Setting TOS check as: true
+2021-11-28 13:45:26.210 [main] INFO  pages.BillingAddressPage - TOS Checkbox is unchecked, flipping to checked
+2021-11-28 13:45:26.327 [main] INFO  pages.BillingAddressPage - Saving bank account and proceeding to Pay page
+2021-11-28 13:45:26.936 [main] INFO  validations.PayPageValidation - Comparing account number, provided full account is 12345978910, trimming to last 4, 8910
+2021-11-28 13:45:40.602 [main] INFO  utils.AvdManagement - Setting AVD Template
+2021-11-28 13:45:40.612 [main] INFO  utils.AvdManagement - Setting test image for bill MEDICAL scenario
+2021-11-28 13:45:40.617 [main] INFO  pages.SplashPage - Starting payment process
+2021-11-28 13:45:41.151 [main] INFO  pages.CaptureBillPage - Authorizing camera
+2021-11-28 13:45:45.960 [main] INFO  pages.CaptureBillPage - capturing bill with camera
+2021-11-28 13:45:47.150 [main] INFO  pages.CaptureBillPage - setting bill amount as 5.00
+2021-11-28 13:45:52.665 [main] INFO  validations.CaptureBillPageValidation - Comparing billing amount, expected $5.00
+2021-11-28 13:45:56.213 [main] INFO  validations.CaptureBillPageValidation - Comparing biller name, expected Your Bill
+2021-11-28 13:45:56.284 [main] INFO  pages.CaptureBillPage - adding manual bank account
+2021-11-28 13:45:57.029 [main] INFO  pages.AddBankAccountPage - Setting bank account for parameters: BankAccount{phoneNumber='3148675309', emailAddress='qa@papayapay.com', accountHolderName='test customer', routingNumber='081000210', routingNumberConfirmation='081000210', accountNumber='12345978910', accountNumberConfirmation='12345978910'}
+2021-11-28 13:46:07.653 [main] INFO  pages.AddBankAccountPage - Hitting next in bank account info
+2021-11-28 13:46:08.243 [main] INFO  pages.BillingAddressPage - Setting address for parameters: Address{street='3901 Old Seward Hwy Suite 101', city='Anchorage', zip='99503', state='AK'}
+2021-11-28 13:46:12.957 [main] INFO  pages.BillingAddressPage - Setting address state drop down as: AK
+2021-11-28 13:46:15.704 [main] INFO  pages.BillingAddressPage - Setting TOS check as: true
+2021-11-28 13:46:15.765 [main] INFO  pages.BillingAddressPage - TOS Checkbox is unchecked, flipping to checked
+2021-11-28 13:46:15.853 [main] INFO  pages.BillingAddressPage - Saving bank account and proceeding to Pay page
+2021-11-28 13:46:16.463 [main] INFO  validations.PayPageValidation - Comparing account number, provided full account is 12345978910, trimming to last 4, 8910
+2021-11-28 13:46:18.525 [main] INFO  pages.PayPage - Hitting next now that medical info is submitted
+2021-11-28 13:46:18.628 [main] INFO  pages.PayPage - Setting customer medical info as name:test client, dob:08141982
+2021-11-28 13:57:40.522 [main] INFO  listeners.TestStatusListener - ### Test Start: null
+2021-11-28 13:57:40.532 [main] INFO  listeners.TestStatusListener - ### Description: Execute an E2E test with a given bill type, including payment setup and submission.
+2021-11-28 13:57:40.534 [main] INFO  utils.AvdManagement - Setting AVD Template
+2021-11-28 13:57:40.542 [main] INFO  utils.AvdManagement - Setting test image for bill UTILITY scenario
+2021-11-28 13:57:40.784 [main] INFO  pages.SplashPage - Starting payment process
+2021-11-28 13:57:40.974 [main] INFO  pages.CaptureBillPage - Authorizing camera
+2021-11-28 13:57:45.813 [main] INFO  pages.CaptureBillPage - capturing bill with camera
+2021-11-28 13:57:47.035 [main] INFO  pages.CaptureBillPage - setting bill amount as 5.00
+2021-11-28 13:57:52.307 [main] INFO  validations.CaptureBillPageValidation - Comparing billing amount, expected $5.00
+2021-11-28 13:57:55.096 [main] INFO  validations.CaptureBillPageValidation - Comparing biller name, expected City Of Tallahassee
+2021-11-28 13:57:55.163 [main] INFO  pages.CaptureBillPage - adding manual bank account
+2021-11-28 13:57:55.905 [main] INFO  pages.AddBankAccountPage - Setting bank account for parameters: BankAccount{phoneNumber='3148675309', emailAddress='qa@papayapay.com', accountHolderName='test customer', routingNumber='081000210', routingNumberConfirmation='081000210', accountNumber='12345978910', accountNumberConfirmation='12345978910'}
+2021-11-28 13:58:07.132 [main] INFO  pages.AddBankAccountPage - Hitting next in bank account info
+2021-11-28 13:58:07.733 [main] INFO  pages.BillingAddressPage - Setting address for parameters: Address{street='3901 Old Seward Hwy Suite 101', city='Anchorage', zip='99503', state='AK'}
+2021-11-28 13:58:12.587 [main] INFO  pages.BillingAddressPage - Setting address state drop down as: AK
+2021-11-28 13:58:15.551 [main] INFO  pages.BillingAddressPage - Setting TOS check as: true
+2021-11-28 13:58:15.642 [main] INFO  pages.BillingAddressPage - TOS Checkbox is unchecked, flipping to checked
+2021-11-28 13:58:15.763 [main] INFO  pages.BillingAddressPage - Saving bank account and proceeding to Pay page
+2021-11-28 13:58:16.406 [main] INFO  validations.PayPageValidation - Comparing account number, provided full account is 12345978910, trimming to last 4, 8910
+2021-11-28 13:58:18.490 [main] INFO  listeners.TestStatusListener - ### Test null Passed
+2021-11-28 13:58:28.495 [main] INFO  listeners.TestStatusListener - ### Test Start: null
+2021-11-28 13:58:28.495 [main] INFO  listeners.TestStatusListener - ### Description: Execute an E2E test with a given bill type, including payment setup and submission.
+2021-11-28 13:58:28.496 [main] INFO  utils.AvdManagement - Setting AVD Template
+2021-11-28 13:58:28.501 [main] INFO  utils.AvdManagement - Setting test image for bill MEDICAL scenario
+2021-11-28 13:58:28.507 [main] INFO  pages.SplashPage - Starting payment process
+2021-11-28 13:58:29.225 [main] INFO  pages.CaptureBillPage - Authorizing camera
+2021-11-28 13:58:34.121 [main] INFO  pages.CaptureBillPage - capturing bill with camera
+2021-11-28 13:58:35.626 [main] INFO  pages.CaptureBillPage - setting bill amount as 5.00
+2021-11-28 13:58:42.954 [main] INFO  validations.CaptureBillPageValidation - Comparing billing amount, expected $5.00
+2021-11-28 13:58:46.224 [main] INFO  validations.CaptureBillPageValidation - Comparing biller name, expected Your Bill
+2021-11-28 13:58:46.287 [main] INFO  pages.CaptureBillPage - adding manual bank account
+2021-11-28 13:58:47.072 [main] INFO  pages.AddBankAccountPage - Setting bank account for parameters: BankAccount{phoneNumber='3148675309', emailAddress='qa@papayapay.com', accountHolderName='test customer', routingNumber='081000210', routingNumberConfirmation='081000210', accountNumber='12345978910', accountNumberConfirmation='12345978910'}
+2021-11-28 13:58:56.176 [main] INFO  pages.AddBankAccountPage - Hitting next in bank account info
+2021-11-28 13:58:56.775 [main] INFO  pages.BillingAddressPage - Setting address for parameters: Address{street='3901 Old Seward Hwy Suite 101', city='Anchorage', zip='99503', state='AK'}
+2021-11-28 13:59:01.529 [main] INFO  pages.BillingAddressPage - Setting address state drop down as: AK
+2021-11-28 13:59:04.188 [main] INFO  pages.BillingAddressPage - Setting TOS check as: true
+2021-11-28 13:59:04.265 [main] INFO  pages.BillingAddressPage - TOS Checkbox is unchecked, flipping to checked
+2021-11-28 13:59:04.396 [main] INFO  pages.BillingAddressPage - Saving bank account and proceeding to Pay page
+2021-11-28 13:59:04.994 [main] INFO  validations.PayPageValidation - Comparing account number, provided full account is 12345978910, trimming to last 4, 8910
+2021-11-28 13:59:07.128 [main] INFO  pages.PayPage - Hitting next now that medical info is submitted
+2021-11-28 13:59:07.302 [main] INFO  pages.PayPage - Setting customer medical info as name:test client, dob:08141982
+2021-11-28 13:59:10.775 [main] INFO  listeners.TestStatusListener - ### Test null Passed
+2021-11-28 14:01:33.173 [main] INFO  listeners.TestStatusListener - ### Test Start: testSendingBill
+2021-11-28 14:01:33.179 [main] INFO  listeners.TestStatusListener - ### Description: Execute an E2E test with a given bill type, including payment setup and submission.
+2021-11-28 14:01:33.179 [main] INFO  listeners.TestStatusListener - ### Parameters: UTILITY
+2021-11-28 14:01:33.185 [main] INFO  utils.AvdManagement - Setting AVD Template
+2021-11-28 14:01:33.192 [main] INFO  utils.AvdManagement - Setting test image for bill UTILITY scenario
+2021-11-28 14:01:33.428 [main] INFO  pages.SplashPage - Starting payment process
+2021-11-28 14:01:33.709 [main] INFO  pages.CaptureBillPage - Authorizing camera
+2021-11-28 14:01:38.735 [main] INFO  pages.CaptureBillPage - capturing bill with camera
+2021-11-28 14:01:39.968 [main] INFO  pages.CaptureBillPage - setting bill amount as 5.00
+2021-11-28 14:01:45.967 [main] INFO  validations.CaptureBillPageValidation - Comparing billing amount, expected $5.00
+2021-11-28 14:01:47.482 [main] INFO  validations.CaptureBillPageValidation - Comparing biller name, expected City Of Tallahassee
+2021-11-28 14:01:47.563 [main] INFO  pages.CaptureBillPage - adding manual bank account
+2021-11-28 14:01:48.597 [main] INFO  pages.AddBankAccountPage - Setting bank account for parameters: BankAccount{phoneNumber='3148675309', emailAddress='qa@papayapay.com', accountHolderName='test customer', routingNumber='081000210', routingNumberConfirmation='081000210', accountNumber='12345978910', accountNumberConfirmation='12345978910'}
+2021-11-28 14:01:58.745 [main] INFO  pages.AddBankAccountPage - Hitting next in bank account info
+2021-11-28 14:01:59.355 [main] INFO  pages.BillingAddressPage - Setting address for parameters: Address{street='3901 Old Seward Hwy Suite 101', city='Anchorage', zip='99503', state='AK'}
+2021-11-28 14:02:04.238 [main] INFO  pages.BillingAddressPage - Setting address state drop down as: AK
+2021-11-28 14:02:07.185 [main] INFO  pages.BillingAddressPage - Setting TOS check as: true
+2021-11-28 14:02:07.259 [main] INFO  pages.BillingAddressPage - TOS Checkbox is unchecked, flipping to checked
+2021-11-28 14:02:07.380 [main] INFO  pages.BillingAddressPage - Saving bank account and proceeding to Pay page
+2021-11-28 14:02:07.962 [main] INFO  validations.PayPageValidation - Comparing account number, provided full account is 12345978910, trimming to last 4, 8910
+2021-11-28 14:02:10.044 [main] INFO  listeners.TestStatusListener - ### Test testSendingBill Passed
+2021-11-28 14:02:20.161 [main] INFO  listeners.TestStatusListener - ### Test Start: testSendingBill
+2021-11-28 14:02:20.162 [main] INFO  listeners.TestStatusListener - ### Description: Execute an E2E test with a given bill type, including payment setup and submission.
+2021-11-28 14:02:20.163 [main] INFO  listeners.TestStatusListener - ### Parameters: MEDICAL
+2021-11-28 14:02:20.164 [main] INFO  utils.AvdManagement - Setting AVD Template
+2021-11-28 14:02:20.167 [main] INFO  utils.AvdManagement - Setting test image for bill MEDICAL scenario
+2021-11-28 14:02:20.173 [main] INFO  pages.SplashPage - Starting payment process
+2021-11-28 14:02:20.843 [main] INFO  pages.CaptureBillPage - Authorizing camera
+2021-11-28 14:02:25.816 [main] INFO  pages.CaptureBillPage - capturing bill with camera
+2021-11-28 14:02:27.004 [main] INFO  pages.CaptureBillPage - setting bill amount as 5.00
+2021-11-28 14:02:34.574 [main] INFO  validations.CaptureBillPageValidation - Comparing billing amount, expected $5.00
+2021-11-28 14:02:34.657 [main] INFO  validations.CaptureBillPageValidation - Comparing biller name, expected Your Bill
+2021-11-28 14:02:34.769 [main] INFO  pages.CaptureBillPage - adding manual bank account
+2021-11-28 14:02:35.781 [main] INFO  pages.AddBankAccountPage - Setting bank account for parameters: BankAccount{phoneNumber='3148675309', emailAddress='qa@papayapay.com', accountHolderName='test customer', routingNumber='081000210', routingNumberConfirmation='081000210', accountNumber='12345978910', accountNumberConfirmation='12345978910'}
+2021-11-28 14:02:46.193 [main] INFO  pages.AddBankAccountPage - Hitting next in bank account info
+2021-11-28 14:02:46.800 [main] INFO  pages.BillingAddressPage - Setting address for parameters: Address{street='3901 Old Seward Hwy Suite 101', city='Anchorage', zip='99503', state='AK'}
+2021-11-28 14:02:51.665 [main] INFO  pages.BillingAddressPage - Setting address state drop down as: AK
+2021-11-28 14:02:54.283 [main] INFO  pages.BillingAddressPage - Setting TOS check as: true
+2021-11-28 14:02:54.352 [main] INFO  pages.BillingAddressPage - TOS Checkbox is unchecked, flipping to checked
+2021-11-28 14:02:54.501 [main] INFO  pages.BillingAddressPage - Saving bank account and proceeding to Pay page
+2021-11-28 14:02:55.017 [main] INFO  validations.PayPageValidation - Comparing account number, provided full account is 12345978910, trimming to last 4, 8910
+2021-11-28 14:02:57.047 [main] INFO  pages.PayPage - Hitting next now that medical info is submitted
+2021-11-28 14:02:57.219 [main] INFO  pages.PayPage - Setting customer medical info as name:test client, dob:08141982
+2021-11-28 14:03:00.930 [main] INFO  listeners.TestStatusListener - ### Test testSendingBill Passed
+2021-11-28 14:05:44.220 [main] INFO  listeners.TestStatusListener - ### Test Start: testSendingBill
+2021-11-28 14:05:44.224 [main] INFO  listeners.TestStatusListener - ### Description: Execute an E2E test with a given bill type, including payment setup and submission.
+2021-11-28 14:05:44.224 [main] INFO  listeners.TestStatusListener - ### Parameters: {}
+2021-11-28 14:05:44.225 [main] WARN  listeners.TestStatusListener - ### Test testSendingBill Skipped
+2021-11-28 14:05:44.226 [main] INFO  listeners.TestStatusListener - ### Test Start: testSendingBill
+2021-11-28 14:05:44.226 [main] INFO  listeners.TestStatusListener - ### Description: Execute an E2E test with a given bill type, including payment setup and submission.
+2021-11-28 14:05:44.226 [main] INFO  listeners.TestStatusListener - ### Parameters: {}
+2021-11-28 14:05:44.227 [main] WARN  listeners.TestStatusListener - ### Test testSendingBill Skipped
+2021-11-28 14:13:45.510 [main] INFO  listeners.TestStatusListener - ### Test Start: testSendingBill
+2021-11-28 14:13:45.515 [main] INFO  listeners.TestStatusListener - ### Description: Execute an E2E test with a given bill type, including payment setup and submission.
+2021-11-28 14:13:45.515 [main] INFO  listeners.TestStatusListener - ### Parameters: {}
+2021-11-28 14:13:45.516 [main] WARN  listeners.TestStatusListener - ### Test testSendingBill Skipped
+2021-11-28 14:13:45.517 [main] INFO  listeners.TestStatusListener - ### Test Start: testSendingBill
+2021-11-28 14:13:45.517 [main] INFO  listeners.TestStatusListener - ### Description: Execute an E2E test with a given bill type, including payment setup and submission.
+2021-11-28 14:13:45.517 [main] INFO  listeners.TestStatusListener - ### Parameters: {}
+2021-11-28 14:13:45.518 [main] WARN  listeners.TestStatusListener - ### Test testSendingBill Skipped
+2021-11-28 14:22:32.977 [main] INFO  listeners.TestStatusListener - ### Test Start: testSendingBill
+2021-11-28 14:22:32.980 [main] INFO  listeners.TestStatusListener - ### Description: Execute an E2E test with a given bill type, including payment setup and submission.
+2021-11-28 14:22:32.980 [main] INFO  listeners.TestStatusListener - ### Parameters: {}
+2021-11-28 14:22:32.980 [main] WARN  listeners.TestStatusListener - ### Test testSendingBill Skipped
+2021-11-28 14:22:32.982 [main] INFO  listeners.TestStatusListener - ### Test Start: testSendingBill
+2021-11-28 14:22:32.982 [main] INFO  listeners.TestStatusListener - ### Description: Execute an E2E test with a given bill type, including payment setup and submission.
+2021-11-28 14:22:32.982 [main] INFO  listeners.TestStatusListener - ### Parameters: {}
+2021-11-28 14:22:32.983 [main] WARN  listeners.TestStatusListener - ### Test testSendingBill Skipped
