@@ -1,4 +1,4 @@
-package tests;
+package E2E;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;

@@ -1,4 +1,4 @@
-package tests;
+package E2E;
 
 
 import enums.BillType;
