@@ -4,6 +4,7 @@ package E2E;
 import enums.BillType;
 import model.Address;
 import model.BankAccount;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.*;
@@ -33,6 +34,7 @@ public class TestE2ESubmitPaymentWithCamera extends TestBase {
     @Test(description = "Execute an E2E test with a given bill type, including payment setup and submission.", dataProvider="test-data")
     public void testSendingBill(BillType billType, String expectedBillerName) {
         AvdManagement.setTestImage(billType);
+        driver.resetApp();
 
         // Initiate Payment Process
         SplashPage splashPage = new SplashPage(driver);
