@@ -23,13 +23,12 @@ There is only one suite which is compromised of 1 data-driven test that uses 2 d
 ## Run Instructions
 1. Clone down this repo
 2. You can run these tests in a bunch of different ways.
-   1. Via IDE (e.g. Intellij)
-      1. Add your deviceName and UDID for your device into E2E.xml under "suites"
-      2. Right click to run the suite
-   2. Via Maven
+   1. Via Maven <--- This is the preferred option
       1. Run `mvn test -DdeviceName=<your device here> -Dudid=<your udid here> -DplatformVersion=<your version here>`
          NOTE: Make sure to replace the parameters with your actual info
-   3. Via Jar
+   2. Via IDE (e.g. Intellij)
+      1. Add your deviceName and UDID for your device into E2E.xml under "suites"
+      2. Right click to run the suite
 
 ## Known Issues
 1. The AVD image setting has not been tested on multi-platform, should work on MacOS but possibly not on Linux or Docker
