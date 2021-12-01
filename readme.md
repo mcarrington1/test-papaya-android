@@ -2,9 +2,10 @@
 This is a POC example of how we can use Appium to test a native Android App with a single base scenario.
 
 Here is a demo of what the automation does:
-https://user-images.githubusercontent.com/52325697/144164023-decb606d-2460-4344-a60f-33462186b12c.mp4
+[Walkthrough of what the automation does on YouTube](https://youtu.be/siuKTzFqmQE)
 
 Here is a walkthrough of the code:
+[Code walkthrough on YouTube](https://youtu.be/_99vcukfI9E)
 
 We are specifically testing functionality where the built-in camera is used without any vendor-specific code.
 
