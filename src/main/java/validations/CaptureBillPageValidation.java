@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import pages.CaptureBillPage;
-import pages.SplashPage;
 
 public class CaptureBillPageValidation {
     private static final Logger logger = LogManager.getLogger(CaptureBillPageValidation.class);
