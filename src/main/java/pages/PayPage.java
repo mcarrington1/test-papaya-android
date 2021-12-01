@@ -37,7 +37,7 @@ public class PayPage extends BasePage {
     /**
      * Set name and DOB - Only used for medical bills
      * @param name customer name
-     * @param dob date of birth, only supports numbers (e.g. 08141982)
+     * @param dob date of birth, must be in the following format "08/14/1982" with forward slashes
      * @return
      */
     public PayPage setMedicalInformation(String name, String dob) {

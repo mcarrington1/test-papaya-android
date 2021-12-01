@@ -5,7 +5,7 @@ We are specifically testing functionality where the built-in camera is used with
 
 ## Features
 Although we are only supporting 2 related tests, the current code supports the following:
-1. Pre-setup to deal with the AVD camera. There are provider specific implementations (e.g. saucelabs, etc) that handle this differently, this would likely reliably work on ci/cd but may require a little tweaking.
+1. Pre-setup to deal with the AVD camera. There are provider specific implementations (e.g. saucelabs, etc) that handle this differently.
 2. semi-customized so it would be relatively easy to support IOS locators and platform, if needed
 3. logging and listeners to output status of tests
 4. page object model pattern with separate validation classes where appropriate
@@ -18,7 +18,7 @@ There is only one suite which is compromised of 1 data-driven test that uses 2 d
 ## Installation
 1. Configure an AVD with Android studio; recommended version 10 as I've seen periodic issues with version 11
 2. Confirm that ANDROID_HOME is set, as to seed the test images into AVD this path is required
-3. Install Appium and make sure that the server is running
+3. Install Appium server (e.g. 1.22) and make sure that the server is running
 
 ## Run Instructions
 1. Clone down this repo

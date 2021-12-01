@@ -4,18 +4,17 @@ package E2E;
 import enums.BillType;
 import model.Address;
 import model.BankAccount;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.*;
 import utils.AvdManagement;
 import validations.CaptureBillPageValidation;
+import validations.ConfirmationPageValidation;
 import validations.PayPageValidation;
 
 import static enums.BillType.MEDICAL;
 
 public class TestE2ESubmitPaymentWithCamera extends TestBase {
-    private final String expectedBillAmount = "5.00";
     private final BankAccount bankAccount = new BankAccount();
     private final Address address = new Address();
 
@@ -41,6 +40,7 @@ public class TestE2ESubmitPaymentWithCamera extends TestBase {
         splashPage.startPayBill();
 
         // Capture our payment and submit bill amount
+        String expectedBillAmount = "5.00";
         CaptureBillPage captureBillPage = new CaptureBillPage(driver);
         captureBillPage
                 .authorizeCameraAccess()
@@ -67,18 +67,15 @@ public class TestE2ESubmitPaymentWithCamera extends TestBase {
         // Validate our payment and submit
         PayPage payPage = new PayPage(driver);
         PayPageValidation.validatePartialAccountNumber(payPage, bankAccount.getAccountNumber());
-        //TODO: These are commented out so we do not spam the server
 
         // Additional information is requested for Medical bills
         if (billType == MEDICAL) {
             payPage.submitForMedicalInfo();
-            payPage.setMedicalInformation("test client", "08141982");
+            payPage.setMedicalInformation("test client", "08/14/1982");
         }
-//        payPage.submitPayment();
-//        // Confirm successful payment
-//        ConfirmationPage confirmationPage = new ConfirmationPage(driver);
-//        ConfirmationPageValidation.validateConfirmationPageSuccess(confirmationPage);
+        payPage.submitPayment();
+        // Confirm successful payment
+        ConfirmationPage confirmationPage = new ConfirmationPage(driver);
+        ConfirmationPageValidation.validateConfirmationPageSuccess(confirmationPage);
     }
-
-
 }
