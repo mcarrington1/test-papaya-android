@@ -1,6 +1,12 @@
 # Papaya Pay - Android Automation POC
 This is a POC example of how we can use Appium to test a native Android App with a single base scenario.
 
+Here is a demo of what the automation does:
+papaya-pay-automation-demo.mp4
+
+Here is a walkthrough of the code:
+papaya-pay-automation-code-demo.mp4
+
 We are specifically testing functionality where the built-in camera is used without any vendor-specific code.
 
 ## Features
